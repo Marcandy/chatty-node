@@ -19,7 +19,7 @@ app.get('/messages', function (req, res, next) {
 
 app.post('/messages', function (req, res, next) {
 
-  messages.push(req.body.message);// make sure it correspont to the property name
+  messages.push({message: req.body.message, time: new Date() });// make sure it correspont to the property name
   res.status(200).json({messages: messages});
 })
 
